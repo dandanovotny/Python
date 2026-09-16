@@ -1,7 +1,7 @@
 from random import random
 
 def get_color():
-    value = random * 100
+    value = random() * 100
     if value <= 3:
         return 2
     elif value <= 51.5:
@@ -12,21 +12,26 @@ def get_color():
 def start_game():
     user_bilance = 1_000
     print("Welcome to casino Royal")
-    bet = int(input("Select your bet ():"))
-    print("Select color:")
-    print("\t\t0 - Red")
-    print("\t\t1 - White")
-    print("\t\t2 - Green")
-    print("\t\t9 - Leave game")
-    selection = int(input("Select: "))
-    print()
+    while True:
+        bet = int(input("Select your bet ({user_bilance}eur):"))
+        print("Select color:")
+        print("\t\t0 - Red")
+        print("\t\t1 - White")
+        print("\t\t2 - Green")
+        print("\t\t9 - Leave game")
+
+        selection = int(input("Select: "))
+
+        if selection == 9:
+            return
+
+        if selection == get_color():
+                user_bilance = user_bilance + bet * 2
+                print("You won!")
+        else:
+            print("You lost {bet}eur")
+            user_bilance = user_bilance - bet
 
 
 if __name__ == "__main__":
-    start_game()
-    total_count = 0
-    color = 0
-    for _ in range(1_000):
-        if get_color() == 2:
-            color = color + 1
-    total(color / total_count * 100)
+        start_game()
