@@ -13,7 +13,7 @@ def start_game():
     user_bilance = 1_000
     print("Welcome to casino Royal")
     while True:
-        bet = int(input("Select your bet ({user_bilance}eur):"))
+        bet = int(input(f"Select your bet ({user_bilance}eur):"))
         print("Select color:")
         print("\t\t0 - Red")
         print("\t\t1 - White")
