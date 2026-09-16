@@ -13,15 +13,30 @@ def start_game():
     user_bilance = 1_000
     print("Welcome to casino Royal")
     while True:
-        bet = int(input(f"Select your bet ({user_bilance}eur):"))
+        if user_bilance == 0:
+            print("You lost completely")
+            return
+        text = input(f"Select your bet ({user_bilance}€):")
+        if not text.isnumeric():
+            continue
+
+        bet = int(text)
+        if bet > user_bilance or bet <= 0:
+            print("You dont have money!")
+            return
+
         print("Select color:")
         print("\t\t0 - Red")
         print("\t\t1 - White")
         print("\t\t2 - Green")
         print("\t\t9 - Leave game")
 
-        selection = int(input("Select: "))
 
+        text2 = input("Select: ")
+        if not text2.isnumeric():
+            continue
+        
+        selection = int(text2)
         if selection == 9:
             return
 
@@ -29,7 +44,7 @@ def start_game():
                 user_bilance = user_bilance + bet * 2
                 print("You won!")
         else:
-            print("You lost {bet}eur")
+            print(f"You lost {bet}€")
             user_bilance = user_bilance - bet
 
 
