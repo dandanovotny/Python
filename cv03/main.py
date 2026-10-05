@@ -38,8 +38,7 @@ if __name__ == "__main__":
         x = value // item
         value = value - (x * item)
         print(x)
-
-
+"""
     x_2000 = value // 2000
     value = value - (x_2000 * 2000)
     x_1000 = value // 1000
@@ -62,3 +61,4 @@ if __name__ == "__main__":
     value = value - (x_2 * 2)
     x_1 = value // 1
     value = value - (x_1 * 1)
+    """
