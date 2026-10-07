@@ -16,11 +16,10 @@ def vypis():
 def even_sum():
     N = int(input("Zadej cislo: "))
     sum = 0
-    for i in range(N):
-        print(f"{i + 1}")
-        if N % 2 == 0:
-            sum += N
-    print(sum)
+    for i in range(N + 1):
+        if i % 2 == 0:
+            sum += i
+    print(f"sum: {sum}")
 
 def backwards():
     N = int(input("Zadejte cislo: "))
@@ -34,8 +33,17 @@ def nasobilka():
 
 def minimum():
     N = int(input("Zadejte cislo: "))
-    tmp = 0
-    
+    min = N
+    while N != -1:
+        if min > N:
+            min = N
+        N = int(input("Zadejte cislo: "))
+    print(f"Minimum je: {min}")
+
+def sum():
+    N = int(input("Zadej cislo: "))
+    print(f"{(N*(N+1)) / 2}")
+
 
 if __name__ == "__main__":
-    backwards()
+    even_sum()
