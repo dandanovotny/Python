@@ -27,6 +27,15 @@ def backwards():
     for i in range(N):
         print(f"{N-i}")
 
+def nasobilka():
+    N = int(input("Zadejte cislo: "))
+    for i in range(1, 11):
+        print(f"{N*i}")
+
+def minimum():
+    N = int(input("Zadejte cislo: "))
+    tmp = 0
+    
 
 if __name__ == "__main__":
     backwards()
