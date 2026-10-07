@@ -18,8 +18,8 @@ def prime_number():
     while i > 1:
         if number % i == 0:
             return False
-        i = i - 1
-        return True
+        i -= 1
+    return True
 
 def factorial(number):
     """
