@@ -1,5 +1,5 @@
 from random import random
-
+# Přidat AI hráče
 def get_color():
     value = random() * 100
     if value <= 3:
@@ -35,8 +35,9 @@ def start_game():
         text2 = input("Select: ")
         if not text2.isnumeric():
             continue
-        
+        # Dodělat enter bug
         selection = int(text2)
+        # Dodělat omezení pro výběr
         if selection == 9:
             return
 
