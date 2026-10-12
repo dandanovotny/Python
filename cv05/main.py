@@ -117,6 +117,15 @@ def huh():
     q = a * b
     print(f"Soucin je: {q}")
 
+def ola():
+    N = int(input("Zadej kolik chces zadat cisel"))
+    numbers = []
+    for i in range(N):
+        number = int(input(f"Zadej {i+1}. cislo: "))
+        numbers.append(number)
+
+    print(sum(numbers) / len(numbers))
+
     
 
 
