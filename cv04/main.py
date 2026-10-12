@@ -18,8 +18,8 @@ def prime_number():
     while i > 1:
         if number % i == 0:
             return False
-        i -= 1
-    return True
+        i = i - 1
+        return True
 
 def factorial(number):
     """
@@ -42,12 +42,18 @@ def fibbonachi():
     Napiste funkci, ktera vypocita X clen fibbonachiho posloupnosti
     """
     init = 1
-    for i in range(number):
-        ans = number - init
-        init += 1
-
-    return ans
-
+    prev = 1
+    
+    prev = 1
+    actual = 1
+    if number < 2:
+        return 1
+    
+    for _ in range(number):
+        tmp = init + prev
+        prev = init
+        init = tmp
+    return init
     
 def fibbonachi_recursion(number):
     if number == 0 or number == 1:
@@ -55,21 +61,24 @@ def fibbonachi_recursion(number):
     
     return fibbonachi_recursion(number - 1) + fibbonachi_recursion(number - 2)
     
-def combination_number():
+def combination_number(n, k):
     """
     Napiste funkci ktera vypocita kombinacni cislo
     """
-def pascal_triangle():
+    return factorial_recursion(n) / (factorial_recursion(n-k) * factorial_recursion(k))
+def pascal_triangle(line_index):
     """
-    010
-    0110
-    01210
-    013310
-    0146410
-
+          1
+         1 1
+        1 2 1
+       1 3 3 1
+      1 4 6 4 1
+     1 5 10 10 5 1
+    1 6 15 20 15 6 1
     Napiste funkci, ktera vypise X radek pascalova trojuhelniku
     """
-
+    for item in range(line_index + 1):
+        print(combination_number(line_index, item))
 
 if __name__ == "__main__":
     # Napiste program do ktereho uzivatel zacne vkladat cisla
