@@ -34,4 +34,4 @@ dct = {
     "key": "value",
     1       :   5
 }
-print(dct{"key"})
+print(dct["key"])

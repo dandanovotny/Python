@@ -42,7 +42,7 @@ def minimum():
         N = int(input("Zadejte cislo: "))
     print(f"Minimum je: {min}")
 # 3.3
-def sum():
+def summ():
     N = int(input("Zadej cislo: "))
     print(f"{(N*(N+1)) / 2}")
 # 4.1
@@ -117,8 +117,9 @@ def huh():
     q = a * b
     print(f"Soucin je: {q}")
 
-def ola():
-    N = int(input("Zadej kolik chces zadat cisel"))
+# 7.3
+def prumer_N():
+    N = int(input("Zadej kolik chces zadat cisel: "))
     numbers = []
     for i in range(N):
         number = int(input(f"Zadej {i+1}. cislo: "))
@@ -126,9 +127,17 @@ def ola():
 
     print(sum(numbers) / len(numbers))
 
-    
+# 7.5 / 7.6
+def pocet():
+    N = int(input("Zadejte cele kladne cislo: "))
+    lst = []
+    while N != 0:
+        lst.append(N % 10)
+        N = N // 10
+    print(len(lst)) #sum/len
+
 
 
 
 if __name__ == "__main__":
-    highest_num()
+    pocet()
