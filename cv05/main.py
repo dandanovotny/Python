@@ -136,6 +136,7 @@ def pocet():
         N = N // 10
     print(len(lst)) #sum/len
 
+# 9.1
 def NSD():
     a = int(input("Zadejte cislo a: "))
     b = int(input("Zadejte cislo b: "))
@@ -143,8 +144,89 @@ def NSD():
         a, b = b, a % b
         print(f"{a}")
 
+def NSD_NSN(a,b):
+    while b != 0:
+        a, b = b, a % b
 
+# 9.2
+def NSN():
+    a = int(input("Zadejte cislo a: "))
+    b = int(input("Zadejte cislo b: "))
+    print(+(a * b) / NSD_NSN(a,b))
 
+# 11.1
+def length():
+    text = input("Zadejte text: ")
+    print(len(text))
+
+# 11.3
+def palindrom():
+    txt = input("Zadejte text: ")
+    pal = txt[::-1]
+    if pal == txt:
+        print("Zadane slovo je palindrom")
+    else:
+        print("Zadane slovo neni palindrom")
+
+# 11.4
+def samo():
+    txt = input("Zadejte text: ")
+    lst = ["a", "e", "i", "o", "u"]
+    for c in lst:
+        counter = 0
+        for h in txt:
+            if c.capitalize() == h.capitalize():
+                counter += 1
+        print(f"V textu se nachazi {c} -> {counter}")
+
+# 11.5
+def znaky():
+    text = input("Zadej text")
+    dct = {}
+    for i in text:
+        if i in dct.keys():
+            counter = dct[i] + 1
+            dct[i] = counter
+        else:
+            dct[i] = i
+    print(dct)
+
+# 12.1
+def list_sum():
+    N = input("Zadejte cisla: ")
+    number = [int(x) for x in N.split()]
+    print(sum(number))
+
+# 12.3
+def seznam():
+    N = input("Zadejte cisla: ")
+    number = []
+    for i in N.split():
+        number.append(int(i))
+    print(number[::-1])
+
+# 12.4
+def dupe():
+    N = input("Zadejte cisla: ")
+    cislo = []
+    for i in N.split():
+        a = int(i)
+        if a not in cislo:
+            cislo.append(a)
+    print(cislo)
+
+def maxmim():
+    N = input("Zadejte cisla: ")
+    numbers = []
+    min = float("inf")
+    max = float("-inf")
+    for i in N.split():
+        a = int(i)
+        if a > max:
+            max = a
+        if a < min:
+            min = a
+    print(f"max {max} min {min}")
 
 if __name__ == "__main__":
     NSD()
