@@ -136,8 +136,15 @@ def pocet():
         N = N // 10
     print(len(lst)) #sum/len
 
+def NSD():
+    a = int(input("Zadejte cislo a: "))
+    b = int(input("Zadejte cislo b: "))
+    while b != 0:
+        a, b = b, a % b
+        print(f"{a}")
+
 
 
 
 if __name__ == "__main__":
-    pocet()
+    NSD()
