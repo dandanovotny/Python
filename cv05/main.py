@@ -215,6 +215,7 @@ def dupe():
             cislo.append(a)
     print(cislo)
 
+# 12.2
 def maxmim():
     N = input("Zadejte cisla: ")
     numbers = []
@@ -228,5 +229,42 @@ def maxmim():
             min = a
     print(f"max {max} min {min}")
 
+# 13.1
+def linear():
+    x = int(input("Zadejte vice cisel: "))
+    lst = []
+    for _ in range(x):
+        i = int(input("Zadej cislo: "))
+        lst.append(i)
+    p = int(input("Zadej cislo, ktere hledas: "))
+    for index, num in enumerate(lst):
+        if num == p:
+            print(f"Cislo se nachazi v seznamu na indexu {index}")
+            return
+    print("Cislo se nenachazi v seznamu")
+
+def binarysearch():
+    search = 6
+    lst = [6,1,2,3,4,5]
+    lst.sort()
+    print(lst)
+    left = 0
+    right = len(lst) - 1
+    middle = (left + right) // 2
+    while right - left != 1:
+        middle = (left + right) // 2
+        if lst[middle] == search:
+            print("Nalezeno")
+            return 1
+        if lst[middle] > search:
+            right = middle
+        if lst[middle] < search:
+            left = middle
+    if lst[0] == search or lst[-1] == search:
+        print("Nalezeno")
+        return 1
+    print("Nenalezeno")
+    
+
 if __name__ == "__main__":
-    NSD()
+    linear()
