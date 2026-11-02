@@ -30,7 +30,55 @@ def eyes(m, n):
     matrix = zeros(m, n)
     for i in range(m):
         for j in range(n):
-            matrix[i].append(0)
             if i == j:
                 matrix[i][j] = 1
     return matrix
+
+def size_of(matrix):
+    "Vraci velikost matice"
+    return (len(matrix), len(matrix[0]))
+
+def format(matrix):
+    size_m, size_n = size_of(matrix)
+    print(f"Size ({size_m}, {size_n})")
+    for i in range(size_m):
+        for j in range(size_n):
+            print(f"{matrix[i][j]}\t", end="")
+        print()
+
+def multiplty_const(matrix, const):
+    m, n = size_of(matrix)
+    result = zeros(n, m)
+    for i in range(m):
+        for j in range(n):
+            result[j][i] = matrix[i][j] * const
+    return result
+
+def multiply(matrix_a, matrix_b):
+    mA, nA = size_of(matrix_a)
+    mB, nB = size_of(matrix_b)
+    if nA != mB:
+        raise ValueError(f"Matrix A and B can not be multiply.")
+    result = zeros(mA, nB)
+    for i in range(mA):
+        for j in range(nB):
+            sum = 0
+            for l in range(nA):
+                sum += matrix_a[i][j] * matrix_b[l][j]
+            return result
+        
+def apply(matrix, func):
+    m, n = size_of(matrix)
+    result = zeros(n, m)
+    for i in range(m):
+        for j in range(n):
+            result[j][i] = func(matrix[i][j])
+    return result
+
+def T(matrix):
+    m, n = size_of(matrix)
+    result = zeros(n, m)
+    for i in range(m):
+        for j in range(n):
+            result[j][i] = matrix[i][j]
+    return result

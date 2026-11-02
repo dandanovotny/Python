@@ -1,4 +1,4 @@
-from matrix import plus, zeros, minus, eyes
+from matrix import plus, zeros, minus, eyes, format, T, multiply
 
 if __name__ == "__main__":
     matrix_a = [
@@ -18,5 +18,8 @@ matrix_c = plus(matrix_a, matrix_b)
 # 2, 1, 2
 # 1, 2, 1
 # 1, 1, 2
+
+format(T(matrix_c))
+multiply(format(matrix_a, matrix_b))
 
 print(eyes(4, 5))
