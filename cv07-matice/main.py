@@ -1,4 +1,4 @@
-from matrix import plus, zeros, minus, eyes, format, T, multiply, replace_row, replace_collum
+from matrix import plus, zeros, minus, eyes, format, T, multiply, replace_row, replace_collum, determinant
 
 if __name__ == "__main__":
     matrix_a = [
@@ -13,6 +13,11 @@ if __name__ == "__main__":
         [1, 1, 0]
     ]
 
+    matrix_x = [
+        [1, 1],
+        [0, 1]
+    ]
+
 #matrix_c = plus(matrix_a, matrix_b)
 
 # 2, 1, 2
@@ -22,5 +27,6 @@ if __name__ == "__main__":
 #format(T(matrix_c))
 #multiply(format(matrix_a, matrix_b))
 format(replace_row(matrix_b, [5, 5, 5], 1))
+print(determinant(matrix_x))
 
 print(eyes(4, 5))

@@ -104,3 +104,16 @@ def replace_collum(matrix, vector, index):
             else:
                 result[i][j] = matrix[i][j]
     return result
+
+def determinant(matrix):
+    m, n = size_of(matrix)
+    if m == 2 and n == 2:
+        return matrix[0][0] * matrix[1][0] * matrix[0][1]
+    elif m == 3 and n == 3:
+        return (matrix[0][0] * matrix[1][1] * matrix[2][2] + 
+                matrix[1][0] * matrix[2][1] * matrix[0][2] + 
+                matrix[2][0] * matrix[0][1] * matrix[1][2] -
+                matrix[0][2] * matrix[1][1] * matrix[2][0] -
+                matrix[1][2] * matrix[2][1] * matrix[0][0] -)
+    else:
+        raise VelueError (f"Matice neni 2x2")
