@@ -82,3 +82,25 @@ def T(matrix):
         for j in range(n):
             result[j][i] = matrix[i][j]
     return result
+
+def replace_row(matrix, vector, index):
+    m, n = size_of(matrix)
+    result = zeros(m, n)
+    for i in range(m):
+        for j in range(n):
+            if i == index:
+                result[i][j] = vector[j]
+            else:
+                result[i][j] = matrix[i][j]
+    return result
+
+def replace_collum(matrix, vector, index):
+    m, n = size_of(matrix)
+    result = zeros(m, n)
+    for i in range(m):
+        for j in range(n):
+            if j == index:
+                result[i][j] = vector[i]
+            else:
+                result[i][j] = matrix[i][j]
+    return result
