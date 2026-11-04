@@ -114,6 +114,25 @@ def determinant(matrix):
                 matrix[1][0] * matrix[2][1] * matrix[0][2] + 
                 matrix[2][0] * matrix[0][1] * matrix[1][2] -
                 matrix[0][2] * matrix[1][1] * matrix[2][0] -
-                matrix[1][2] * matrix[2][1] * matrix[0][0] -)
+                matrix[1][2] * matrix[2][1] * matrix[0][0] -
+                matrix[2][2] * matrix[0][1] * matrix[1][0])
     else:
-        raise VelueError (f"Matice neni 2x2")
+        raise ValueError (f"Matice neni 2x2 nebo 3x3")
+    
+def _get_value(matrix, x, y):
+    m, n = size_of(matrix)
+    if x >= 0 and x < m and y >= 0 and y < n:
+        return matrix[x][y]
+    else:
+        return 0
+
+def _do_convolution(matrix, x, y, kernel):
+    pass
+
+def convolution(matrix, kernel):
+    m, n = size_of(matrix)
+    result = zeros(m, n)
+    for i in range(m):
+        for j in range(n):
+            result = _do_convution(matrix, i, j, kernel)
+    return result

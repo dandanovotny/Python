@@ -12,5 +12,11 @@ def show(matrix):
     plt.colorbar()
     plt.show()
 
+def numpy_to_list(matrix):
+    return matrix.astype(int).tolist()
+
+def list_to_numpy(my_list):
+    return np.array(my_list, dtype=int)
+
 matrix = load("C:\\Users\\daniel.novotny\\Desktop\\Flowers.webp")
 show(matrix)
