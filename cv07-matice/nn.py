@@ -25,14 +25,18 @@ def neuron_network(
 
 def do_softmax(items):
     total_signoid = sum(items)
-    for index, i in enumerate(items):
-        print(f"{index} -> {i / total_signoid}")
+    result = []
+    for i in items:
+        result.append(i/total_signoid)
+    return result
 
 if __name__ == "__main__":
     X = [
         [0.75, 1, 1, 1, 1, 1, 0] # priznaky/vstup
     ]
 
-    print(neuron_network(
+    Y = neuron_network(
         X
-    ))
+    )
+    
+    print(do_softmax(Y[0]))
